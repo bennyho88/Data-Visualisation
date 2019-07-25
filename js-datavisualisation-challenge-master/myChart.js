@@ -1,5 +1,7 @@
 /* get Data */
 
+var arrayJson = [];
+
 for (var i = 2; i < table1.rows.length; i++ ) {
   var currentRow = table1.rows[i];
   var data = [];
@@ -8,12 +10,27 @@ for (var i = 2; i < table1.rows.length; i++ ) {
   console.log(country, "rofl");
 
   for (var j = 2; j < currentRow.cells.length; j++) {
-    data.push(currentRow.cells[j].innerHTML);
+    data.push(parseInt(currentRow.cells[j].innerHTML));
   }
  console.log(data);
 
- 
+ var json =  {
+            label: country,
+            data: data,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 1
+        }
+
+        arrayJson.push(json);
+        
 };
+
+console.log(arrayJson);
 
 /* get data from years */
 
@@ -23,6 +40,34 @@ for (var x = 2; x < table1.rows[1].cells.length; x++) {
 }
 
 console.log(dataYear, 'hallo');
+
+/* create canvas element */
+
+var canvas = document.createElement('canvas');
+canvas.id = 'canvas1';
+table1.parentNode.insertBefore(canvas, table1); /* displaying the canvas above the table */
+
+
+/* graph */
+
+var ctx = document.getElementById('canvas1').getContext('2d');
+
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+      labels: dataYear,
+      datasets: arrayJson,
+  },
+  options: {
+
+  }
+});
+
+
+
+
+
+
 
 
 /*
