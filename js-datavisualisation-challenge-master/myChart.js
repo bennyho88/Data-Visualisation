@@ -8,11 +8,21 @@ for (var i = 2; i < table1.rows.length; i++ ) {
   console.log(country, "rofl");
 
   for (var j = 2; j < currentRow.cells.length; j++) {
-    var currentCell = currentRow.cells[j].innerHTML;
-    console.log(currentCell, "lmao");
+    data.push(currentRow.cells[j].innerHTML);
   }
+ console.log(data);
+
+ 
 };
 
+/* get data from years */
+
+var dataYear = [];
+for (var x = 2; x < table1.rows[1].cells.length; x++) {
+  dataYear.push(table1.rows[1].cells[x].innerHTML);
+}
+
+console.log(dataYear, 'hallo');
 
 
 /*
