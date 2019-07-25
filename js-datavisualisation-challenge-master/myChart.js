@@ -1,5 +1,22 @@
+/* get Data */
 
-/* Button */
+for (var i = 2; i < table1.rows.length; i++ ) {
+  var currentRow = table1.rows[i];
+  var data = [];
+  var country = currentRow.cells[1].innerHTML;
+  console.log(currentRow, "lol");
+  console.log(country, "rofl");
+
+  for (var j = 2; j < currentRow.cells.length; j++) {
+    var currentCell = currentRow.cells[j].innerHTML;
+    console.log(currentCell, "lmao");
+  }
+};
+
+
+
+/*
+/* Button 
 
 const chartOne = document.getElementById("chartOne");
 
@@ -14,25 +31,25 @@ chartOne.addEventListener("click", displayChart);
         x.style.display = "none";
     }
 }
-/* Graph */
+/* Graph 
 
 
-/*
+
 
 function getData() {
     labels:
 }
 
-*/
+
 function BuildChart(labels, values, chartTitle) {
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: labels, // Our labels
+        labels: country,
         datasets: [{
-          label: chartTitle, // Name the series
-          data: values, // Our values
+          label: "Crimes and offenses recorded by the police", 
+          data: [2002,2003,2004,2005,2006,]
           backgroundColor: [ // Specify custom colors
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -81,6 +98,7 @@ function BuildChart(labels, values, chartTitle) {
   
   console.log(json); 
 
+  
   // Map JSON values back to label array
 var country = json.map(function (e) {
     return e.pays;
@@ -92,4 +110,4 @@ var country = json.map(function (e) {
     return e.nombre;
   });
   console.log(nombre); 
-  
+  */
