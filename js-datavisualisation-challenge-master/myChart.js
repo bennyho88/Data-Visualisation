@@ -63,9 +63,32 @@ var myChart = new Chart(ctx, {
   }
 });
 
+/* get data second table */
 
+for (var a = 1; a < table2.rows.length; a++) {
+  var currentRow2 = table2.rows[a];
+  var dataTwo = [];
+  var countryTwo = currentRow2.cells[1].innerHTML;
+  console.log(currentRow2, 'bonjour');
+  console.log(countryTwo, 'halloo');
 
+  for (var b = 1; b < currentRow2.cells.length; b++) {
+    dataTwo.push({
+      country: currentRow2.cells[b].innerHTML,
+    
+    })
+  }
+  
+  console.log(dataTwo, 'loool');
+}
 
+var dataYear2 = [];
+
+for (var c = 0; c < table2.rows[0].cells.length; c++) {
+  dataYear2.push(table2.rows[0].cells[c].innerHTML);
+}
+
+console.log(dataYear2, 'hey');
 
 
 
