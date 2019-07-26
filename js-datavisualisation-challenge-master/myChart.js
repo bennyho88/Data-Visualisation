@@ -80,7 +80,7 @@ for (var a = 1; a < table2.rows.length; a++) {
   console.log(dataTwo, 'loool');
 
   var json =  {
-    label: countryTwo,
+    label:  countryTwo,
     data: dataTwo,
     backgroundColor: [
         'rgba(255, 99, 132, 0.2)'
@@ -124,3 +124,11 @@ var myChartTwo = new Chart(ctxTwo, {
   }
 });
 
+/* get API */
+
+const url = 'https://becoderandomdata.000webhostapp.com/randomdata.php';
+
+fetch(url)
+.then(response => response.text())
+.then(contents => console.log(contents))
+.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
